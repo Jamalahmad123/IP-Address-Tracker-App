@@ -52,6 +52,7 @@ export const GlobalContextProvider = ({ children }) => {
 
     setTimeout(() => {
       setAlert(null);
+      setIpRes(null);
     }, 3000);
   }
 
