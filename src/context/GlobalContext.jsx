@@ -29,10 +29,9 @@ export const GlobalContextProvider = ({ children }) => {
     try {
       const response = await fetch(`${IP_ENDPOINT}&ip=${ipAddress}`);
 
-      if (response.status !== "ok") {
+      if (!response.ok) {
         throw new Error("Invalid IP Address");
       }
-
       const data = await response.json();
       setAddressData(data);
     } catch (error) {
@@ -58,7 +57,6 @@ export const GlobalContextProvider = ({ children }) => {
       value={{
         addressData,
         alert,
-        ipRes,
         isLoading,
         searchIPAddress,
         showMessage,
