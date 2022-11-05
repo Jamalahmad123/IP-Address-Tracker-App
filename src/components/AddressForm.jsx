@@ -20,7 +20,6 @@ const AddressForm = () => {
     } else {
       searchIPAddress(text);
       setText("");
-      console.log("yes");
     }
   };
 
