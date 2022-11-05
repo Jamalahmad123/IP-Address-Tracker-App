@@ -36,7 +36,6 @@ export const GlobalContextProvider = ({ children }) => {
 
       const data = await response.json();
       setAddressData(data);
-      setIpRes(null);
     } catch (error) {
       setIpRes(error.message);
     }
