@@ -17,7 +17,7 @@ const AddressForm = () => {
 
     if (text === "") {
       showMessage("Please Enter an IP Address", "error");
-    } else if (text !== "" && ipRes) {
+    } else if (ipRes) {
       showMessage(ipRes, "error");
     } else {
       searchIPAddress(text);
