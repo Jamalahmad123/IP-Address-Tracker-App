@@ -6,7 +6,7 @@ import IpAddressResult from "./IpAddressResult";
 import Spinner from "./Spinner";
 
 const AddressForm = () => {
-  const { addressData, isLoading, showMessage, searchIPAddress, ipRes } =
+  const { addressData, isLoading, showMessage, searchIPAddress } =
     useContext(GlobalContext);
   const [text, setText] = useState("");
 
@@ -17,8 +17,6 @@ const AddressForm = () => {
 
     if (text === "") {
       showMessage("Please Enter an IP Address", "error");
-    } else if (ipRes) {
-      showMessage(ipRes, "error");
     } else {
       searchIPAddress(text);
       setText("");

@@ -8,7 +8,6 @@ export const GlobalContextProvider = ({ children }) => {
   const [addressData, setAddressData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [alert, setAlert] = useState(null);
-  const [ipRes, setIpRes] = useState(null);
 
   useEffect(() => {
     getIPAddress();
@@ -37,7 +36,7 @@ export const GlobalContextProvider = ({ children }) => {
       const data = await response.json();
       setAddressData(data);
     } catch (error) {
-      setIpRes(error.message);
+      showMessage(error.message, "error");
     }
 
     setIsLoading(false);
@@ -51,7 +50,6 @@ export const GlobalContextProvider = ({ children }) => {
 
     setTimeout(() => {
       setAlert(null);
-      setIpRes(null);
     }, 3000);
   }
 
